@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FEF3BFD66D4D26D2E2CC44F /* Pods_MediumCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9920B310DF5B5B197B1C28F9 /* Pods_MediumCloneApp.framework */; };
 		E1748A7729BB7D710036D60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1748A7629BB7D710036D60F /* AppDelegate.swift */; };
 		E1748A7929BB7D710036D60F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1748A7829BB7D710036D60F /* SceneDelegate.swift */; };
 		E1748A7B29BB7D710036D60F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1748A7A29BB7D710036D60F /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9920B310DF5B5B197B1C28F9 /* Pods_MediumCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediumCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1FD5457DB974105B1C1A39 /* Pods-MediumCloneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumCloneApp.release.xcconfig"; path = "Target Support Files/Pods-MediumCloneApp/Pods-MediumCloneApp.release.xcconfig"; sourceTree = "<group>"; };
+		D38AA5FD46679E956DEAA740 /* Pods-MediumCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediumCloneApp.debug.xcconfig"; path = "Target Support Files/Pods-MediumCloneApp/Pods-MediumCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E1748A7329BB7D710036D60F /* MediumCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediumCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1748A7629BB7D710036D60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1748A7829BB7D710036D60F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEF3BFD66D4D26D2E2CC44F /* Pods_MediumCloneApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80AA5B9C9191660F27B1E609 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9920B310DF5B5B197B1C28F9 /* Pods_MediumCloneApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA58ABC725D4865203049634 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D38AA5FD46679E956DEAA740 /* Pods-MediumCloneApp.debug.xcconfig */,
+				CD1FD5457DB974105B1C1A39 /* Pods-MediumCloneApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E1748A6A29BB7D700036D60F = {
 			isa = PBXGroup;
 			children = (
 				E1748A7529BB7D710036D60F /* MediumCloneApp */,
 				E1748A7429BB7D710036D60F /* Products */,
+				CA58ABC725D4865203049634 /* Pods */,
+				80AA5B9C9191660F27B1E609 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1748A8729BB7D710036D60F /* Build configuration list for PBXNativeTarget "MediumCloneApp" */;
 			buildPhases = (
+				521EA8D4DA890A0FDF9697CB /* [CP] Check Pods Manifest.lock */,
 				E1748A6F29BB7D710036D60F /* Sources */,
 				E1748A7029BB7D710036D60F /* Frameworks */,
 				E1748A7129BB7D710036D60F /* Resources */,
+				99F5042BE7A27523111790CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		521EA8D4DA890A0FDF9697CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MediumCloneApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99F5042BE7A27523111790CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediumCloneApp/Pods-MediumCloneApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediumCloneApp/Pods-MediumCloneApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediumCloneApp/Pods-MediumCloneApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1748A6F29BB7D710036D60F /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		E1748A8829BB7D710036D60F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D38AA5FD46679E956DEAA740 /* Pods-MediumCloneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		E1748A8929BB7D710036D60F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD1FD5457DB974105B1C1A39 /* Pods-MediumCloneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
