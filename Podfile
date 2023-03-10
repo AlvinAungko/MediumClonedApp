@@ -8,4 +8,7 @@ target 'MediumCloneApp' do
   # Pods for MediumCloneApp
   pod 'SkeletonView'
 
+  # Pods for Animation
+  pod 'Hero'
+
 end
